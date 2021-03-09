@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewModel"
+                  type="com.example.habittracker.ui.add.AddHabitViewModel"/>
+    </data>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".ui.add.AddHabitFragment"
+                android:layout_margin="10dp"
+                android:id="@+id/frameLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Habit Name">
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.name}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/descriptionTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Habit Description(optional)">
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.desp}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Which day(s) do you want to do this"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/darker_gray" android:textSize="20sp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/everyday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                android:selectAllOnFocus="true"
+                                android:text="Every Day"/>
+
+                        <Button
+                                android:id="@+id/monday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:contentDescription="unchecked"
+                                android:layout_height="wrap_content"
+                                android:text="Monday"/>
+
+                        <Button
+                                android:id="@+id/tuesday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_margin="5dp"
+                                android:contentDescription="unchecked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tuesday"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/wednesday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:contentDescription="unchecked"
+                                android:layout_height="wrap_content"
+                                android:text="Wednesday"/>
+
+                        <Button
+                                android:id="@+id/thursday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Thursday"/>
+
+                        <Button
+                                android:id="@+id/friday_btn"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Friday"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/saturday_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:text="Saturday"/>
+
+                        <Button
+                                android:id="@+id/sunday_btn"
+                                android:layout_margin="5dp"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:text="Sunday"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Which time in a day"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/darker_gray" android:textSize="20sp"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/early_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                android:selectAllOnFocus="true"
+                                android:text="Early Morning(6-9AM)"/>
+
+                        <Button
+                                android:id="@+id/morning_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:contentDescription="unchecked"
+                                android:layout_height="wrap_content"
+                                android:text="Morning(9-12PM)"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/noon_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:contentDescription="unchecked"
+                                android:layout_height="wrap_content"
+                                android:text="Noon(12-3PM)"/>
+
+                        <Button
+                                android:id="@+id/evening_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Evening(3-6PM)"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/night_btn"
+                                android:contentDescription="unchecked"
+                                android:layout_margin="5dp"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Night(6-9PM)"/>
+
+                        <Button
+                                android:id="@+id/late_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:text="Late Night(9-12AM)"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" android:layout_gravity="center">
+
+                        <Button
+                                android:id="@+id/anytime_btn"
+                                android:layout_margin="5dp"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:text="Any Time"/>
+
+                        <Button
+                                android:id="@+id/exact_btn"
+                                style="?attr/materialButtonOutlinedStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="5dp"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="unchecked"
+                                android:text="Exact Time"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/linearLayout">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reminder"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="20sp"
+                        android:id="@+id/textView2" app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:layout_constraintEnd_toStartOf="@+id/reminder_switch"
+                        app:layout_constraintHorizontal_bias="0.269"/>
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:layout_width="wrap_content"
+                        android:id="@+id/reminder_switch"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:layout_alignParentRight="true"
+                        android:text="ON"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/quotesTextField"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Motivational Quote">
+
+                <!--this is the actual edit text which takes the input-->
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/quotes_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.quote}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                    android:id="@+id/done_btn"
+                    android:onClick="@{() -> viewModel.doneButton()}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Done"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
